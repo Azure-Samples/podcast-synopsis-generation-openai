@@ -1,16 +1,16 @@
-# Building a pipeline for processing media files using Azure OpenAI for analysis
+# Building A Pipeline For Podcast Synopsis Generation (and more) With Azure OpenAI
 
 ## Overview
 
 The process of podcast synopsis generation traditionally has required creators, producers, and/or writers to understand the content, and manually write the synopsis, summarizing the salient points and highlights of an episode. This approach is time-consuming and may involve brainstorming sessions that discuss the main themes, and refine the text until it effectively conveys the podcast's message and tone (e.g., a comedic podcast may feature humorous language or hyperbole in its summaries).
 
-This repository illustrates how to automate a large part of this manual and time-consuming process using the portfolio of services provided by [Azure Cognitive Services](https://azure.microsoft.com/en-us/products/cognitive-services); specifically [Azure Speech Service](https://azure.microsoft.com/en-us/products/cognitive-services/speech-services/) and [Azure OpenAI](https://azure.microsoft.com/en-us/products/cognitive-services/openai-service) are used for transcribing and generating the **synopsis**, **taglines**, **SEO keywords** and **translation**. Incorporating AI to automate this process does not eliminate the role of human creativity or the importance of human involvement. Instead, it enables a significant acceleration in time-to-market by harnessing the power of AI. The final validation and approval of content remains the responsibility of human specialists before publishing.
+This repository illustrates how to automate a large part of this manual and time-consuming process using the portfolio of services provided by [Azure Cognitive Services](https://azure.microsoft.com/en-us/products/cognitive-services), specifically [Azure Speech Service](https://azure.microsoft.com/en-us/products/cognitive-services/speech-services/) and [Azure OpenAI](https://azure.microsoft.com/en-us/products/cognitive-services/openai-service) are used for transcribing and generating the **synopsis**, **taglines**, **SEO keywords** and **translation** into multiple languages. Incorporating AI to automate this process does not eliminate the role of human creativity or the importance of human involvement. Instead, it enables a significant acceleration in time-to-market by harnessing the power of AI. The final validation and approval of content remains the responsibility of human specialists before publishing.
 
 ## Architecture
 
 ![architecture](./docs/media/high-level-arch.png)
 
-This repository implements a high-level architecture that will take the audio of a podcast (steps 1-3), transcribe the audio into text using Azure Speech Services (step 4), and generate a synopsis based on the transcription using Azure OpenAI GPT-3.5 (step 5).
+This repository implements a high-level architecture that will take the audio of a podcast (steps 1-3), transcribe the audio into text using Azure Speech Services (step 4), and generate a synopsis based on the transcription using Azure OpenAI GPT-3.5 (step 5). Note that the version of GPT model used can be easily upgraded to, for example GPT-4, or future versions.
 
 It consists of a React web app that allows a user to upload an audio file (podcast). The app uses an [Azure function (WebApiHttpTrigger)](/src/functions/WebApiHttpTrigger/) endpoint to upload the audio file to a storage account, i.e. the `raw-files` container.
 
