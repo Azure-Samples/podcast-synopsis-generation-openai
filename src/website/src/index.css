@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fullscreen.fullscreen-enabled {
+    overflow: auto;
+    /* background-color: rgb(30 41 59); */
+}
+
+/* https: //css-tricks.com/snippets/css/stack-of-paper/ */
+.paper {
+    background: #fff;
+    box-shadow:
+        /* The top layer shadow */
+        0 -1px 1px rgba(0, 0, 0, 0.15),
+        /* The second layer */
+        0 -10px 0 -5px #eee,
+        /* The second layer shadow */
+        0 -10px 1px -4px rgba(0, 0, 0, 0.15),
+        /* The third layer */
+        0 -20px 0 -10px #eee,
+        /* The third layer shadow */
+        0 -20px 1px -9px rgba(0, 0, 0, 0.15);
+    /* Padding for demo purposes */
+    padding: 30px;
+}
+
+.list-style-arrow {
+    list-style-type: "→ ";
+}
+
+.list-style-arrow ::marker {
+    color: rgb(150, 150, 150);
+}
+
+.animate__backOutUp {
+    animation-name: backOutUpLargerTranslation !important;
+}
+
+@keyframes backOutUpLargerTranslation {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    20% {
+        -webkit-transform: translateY(0px) scale(0.7);
+        transform: translateY(0px) scale(0.7);
+        opacity: 0.7;
+    }
+
+    100% {
+        -webkit-transform: translateY(-1100px) scale(0.7);
+        transform: translateY(-1100px) scale(0.7);
+        opacity: 0.7;
+    }
+}
