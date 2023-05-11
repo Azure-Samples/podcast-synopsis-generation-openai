@@ -1,0 +1,16 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=youraccountname;AccountKey=youraccountkey;EndpointSuffix=core.windows.net",
+    "STORAGE_ACCOUNT_CONNECTION_STRING": "DefaultEndpointsProtocol=https;AccountName=youraccountname;AccountKey=youraccountkey;EndpointSuffix=core.windows.net",
+    "AUDIO_FILE_UPLOAD_CONTAINER": "raw-files",
+    "TRANSCRIPTION_FILE_UPLOAD_CONTAINER": "transcription",
+    "OPENAI_INSIGHTS_FILE_UPLOAD_CONTAINER": "open-ai-results",
+    "SPEECH_KEY": "yourspeechkey",
+    "SPEECH_REGION": "yourspeechregion",
+    "OPENAI_KEY": "youropenaikey",
+    "OPENAI_ENDPOINT": "https://youropenairegion.api.cognitive.microsoft.com/",
+    "FILE_SHARE_MOUNT_PATH": "../terraform/data/functions-file-share"
+  }
+}
