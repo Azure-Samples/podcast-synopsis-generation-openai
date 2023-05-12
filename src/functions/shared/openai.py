@@ -1,3 +1,4 @@
+
 import openai
 from .appsettings import OPENAI_KEY, OPENAI_ENDPOINT
 import logging
@@ -17,6 +18,7 @@ DESIRED_CAPABILITY = 'completion'
 deployment_id = None
 
 def deploy_model():
+    global deployment_id
     # list models deployed with
     result = openai.Deployment.list()
 
@@ -83,6 +85,7 @@ def chunk_generator(text, n, tokenizer):
 
 
 def request_api(document, prompt_postfix, max_tokens):
+    global deployment_id
     prompt = prompt_postfix.replace('<document>', document)
     # logging.info(f'>>> prompt : {prompt}')
 
