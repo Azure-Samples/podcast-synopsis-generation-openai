@@ -14,10 +14,10 @@ openai.api_key = OPENAI_KEY
 DESIRED_MODEL = 'text-davinci-003'
 DESIRED_CAPABILITY = 'completion'
 
+deployment_id = None
 
 def deploy_model():
     # list models deployed with
-    deployment_id = None
     result = openai.Deployment.list()
 
     for deployment in result.data:
