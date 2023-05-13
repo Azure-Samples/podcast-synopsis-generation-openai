@@ -28,6 +28,7 @@ _Infrastructure-as-Code_ (IaC) is located under `src/terraform` folder and deplo
 
 - Azure Subscription with Admin level access.
 - Azure CLI installed locally. Required Azure CLI version 2.20.0 or later. See [Install Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) for more details.
+- Terraform installed locally. See [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/azure-get-started/install-cli) for details.
 
 ### Setup and Deploy resources
 

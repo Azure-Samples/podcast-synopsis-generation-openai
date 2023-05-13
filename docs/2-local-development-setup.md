@@ -7,7 +7,7 @@ This guide helps you to run the application locally.
 1. [Prerequisites](#1-prerequisites)
 2. [Repository Structure](#2-repository-structure)
 3. [Running project locally](#3-running-project-locally)
-   1. [1. Create a python environment.](#1-create-a-python-environment.)
+   1. [1. Create a python environment.](#1-create-a-python-environment)
    2. [2. Run Function App.](#2-run-function-app)
    3. [3. Starting Website](#3-starting-website)
 4. [Next steps](#next-steps)
@@ -31,7 +31,7 @@ The `src/` directory contains:
 
 ## 3. Running project locally
 
-### 1. Create a python environment.
+### 1. Create a python environment
 
 Using VS Code, open the command palette (_Ctrl+Shift+P_).
 
@@ -44,9 +44,7 @@ The VS Code wizard will ask if you want to install requirements from _requiremen
 
 ### 2. Run Function App
 
-Update `src/functions/local.settings.json` file. Values can be found in Azure Portal.
-
-Sample file:
+Update `src/functions/local.settings.json` file. Values can be found in Azure Portal, and further details can be found below this sample file:
 
 ```json
 {
@@ -66,6 +64,17 @@ Sample file:
   }
 }
 ```
+
+You will need to update `AzureWebJobsStorage` and `STORAGE_ACCOUNT_CONNECTION_STRING` with the same connection string, which you can find in the [Azure Portal](https://portal.azure.com).
+
+1. Navigate to your storage account in the Azure portal.
+2. In the **Security + networking** section, locate the **Access keys** setting.
+3. To display the account keys and associated connection strings, select the **Show** button to the right of the **Connection string** field.
+4. To copy a connection string to the clipboard, select the **Copy** button to the right of the connection string.
+
+![Azure Storage Account image](./media/portal-storage-connection-string.png)
+
+You will also need to update the values of `SPEECH_KEY`, `SPEECH_REGION`, `OPENAI_KEY` and `OPENAI_ENDPOINT` using the Key, Region, and Endpoint values found in the Speech service and Azure OpenAI resources.
 
 Change directories to src/functions:
 
