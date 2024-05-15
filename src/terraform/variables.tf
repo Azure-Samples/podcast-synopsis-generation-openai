@@ -10,7 +10,7 @@ variable "resource_group_name" {
 
 variable "region" {
   type    = string
-  default = "West US"
+  default = "East US"
 }
 
 variable "storage_account_name" {
