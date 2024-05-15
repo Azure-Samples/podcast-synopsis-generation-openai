@@ -105,7 +105,7 @@ resource "azurerm_storage_share_file" "podabstract" {
 resource "azurerm_static_site" "podabstract" {
   name                = "main-website"
   resource_group_name = azurerm_resource_group.podabstract.name
-  location            = "centralus"
+  location            = var.region
   sku_tier            = "Standard"
   sku_size            = "Standard"
 
@@ -205,7 +205,7 @@ resource "azurerm_cognitive_account" "podabstract_speech" {
 
 resource "azurerm_cognitive_account" "podabstract_oai" {
   name                = "podabstract-${random_string.unique_prefix.result}-openai"
-  location            = "South Central US"
+  location            = var.region
   resource_group_name = azurerm_resource_group.podabstract.name
   kind                = "OpenAI"
   sku_name            = "S0"
